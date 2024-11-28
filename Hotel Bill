@@ -1,0 +1,1139 @@
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+void main()
+{
+int vstr,tvstr=0,vfd,tvfd=0,fd,tfd=0,d;          //Variables for quantity
+int amt=0,tamt=0,tamt1=0,tamt2=0,tamt3=0,tamt4=0,tamt5=0,tamt6=0,tamt7=0,tamt8=0,tamt9=0,tamt10=0,tamt11=0,tamt12=0,tamt13=0;
+int ch, incr=0,i=0;
+float tot,total_amount;
+char  itemchosen[100][150];
+char amount[50];
+char Q[50];
+char str[3];
+int choice;
+int choice1=1;
+printf("Welcome to SHREE GURU SAGAR\n\n");
+
+while(choice1)                                              //MENU LIST
+{
+printf("Enter for Breakfast: 1\n");
+printf("Enter for Hot Drinks with snacks: 2\n");
+printf("Enter for Special Dosas's: 3\n");
+printf("Enter for Meals:4\n");
+printf("Enter for Starter corner: 5\n");
+printf("Enter for Chats: 6\n");
+printf("Enter for Soups: 7\n");
+printf("Enter for Kabab Corner: 8\n");
+printf("Enter for Kofta: 9\n");
+printf("Enter for Tandoor Khajana: 10\n");
+printf("Enter for Subzi Bahar:11\n");
+printf("Enter for Rice And Noodles: 12\n");
+printf("Enter for Milk Shake: 13\n");
+printf("Enter for Desserts Scoops: 14\n");
+printf("Enter your choice\n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:                                                //BREAKFAST
+{
+
+char c[8][15] = {"Idly Sambar","Vada\t","Khara Bath","Kesari Bath","Chow Chow Bath","Poori Saagu", "Akki Rotti", "Rava Idly" };
+printf("Welcome to Breakfast!!!:\n");
+printf("Enter 'B' for BreakFast\n");
+scanf("%s",&str);
+if(strcmpi(str,"B")==0)
+{
+printf("Breakfast\t\t\tPrice in Rs.\n");
+printf("1.Idly Sambar\t\t\t50\n");
+printf("2.Vada\t\t\t\t50\n");
+printf("3.Khara Bath\t\t\t50\n");
+printf("4.Kesari Bath\t\t\t50\n");
+printf("5.Chow Chow Bath\t\t55\n");
+printf("6.Poori Saagu\t\t\t80\n");
+printf("7.Akki Rotti\t\t\t60\n");
+printf("8.Rava Idly with chatni\t\t65\n");
+
+
+choice=1;
+while(choice)
+{
+printf("Choose the Breakfast by choosing number:");
+printf("\tEnter 0 to stop\n");
+scanf("%d",&vstr);
+if(vstr>8)
+{
+printf("Item number that was selected is not present, please select the correct choice\n");
+continue;
+}
+if(vstr==0)
+{
+    break;
+}
+strcat(itemchosen[incr],c[vstr-1]);
+printf("Enter the Quantity\n");
+scanf("%d",&tvstr);
+if(vstr>=1&&vstr<=4)
+{
+    amt=tvstr*50;
+    sprintf(amount, "%d", amt);
+    sprintf(Q,"%d", tvstr);    // int to string
+    strcat(itemchosen[incr],"\t");
+    strcat(itemchosen[incr],Q);
+    strcat(itemchosen[incr],"\t50\t");
+    strcat(itemchosen[incr++],amount);               //incre++ because after storing 1st item incr becomes 1 to store next selected item
+}
+if(vstr==5)
+{
+    amt=tvstr*55;
+    sprintf(amount, "%d", amt);
+    sprintf(Q, "%d", tvstr);  // int to string
+    strcat(itemchosen[incr],"\t");
+    strcat(itemchosen[incr],Q);
+    strcat(itemchosen[incr],"\t55\t");
+    strcat(itemchosen[incr++],amount);
+}
+
+if(vstr==6)
+{
+    amt=tvstr*80;
+    sprintf(amount, "%d", amt);
+    sprintf(Q, "%d", tvstr);   // int to string
+    strcat(itemchosen[incr],"\t");
+    strcat(itemchosen[incr],Q);
+    strcat(itemchosen[incr],"\t80\t");
+    strcat(itemchosen[incr++],amount);
+}
+if(vstr==7)
+{
+    amt=tvstr*60;
+    sprintf(amount, "%d", amt);
+    sprintf(Q, "%d", tvstr);  // int to string
+    strcat(itemchosen[incr],"\t");
+    strcat(itemchosen[incr],Q);
+    strcat(itemchosen[incr],"\t60\t");
+    strcat(itemchosen[incr++],amount);
+}
+if(vstr==8)
+{
+    amt=tvstr*65;
+    sprintf(amount, "%d", amt);
+    sprintf(Q, "%d", tvstr);    // int to string
+    strcat(itemchosen[incr],"\t");
+    strcat(itemchosen[incr],Q);
+    strcat(itemchosen[incr],"\t65\t");
+    strcat(itemchosen[incr++],amount);
+}
+tamt=tamt+amt;
+printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+scanf("%d",&choice);
+}
+}
+}
+break;
+
+
+case 2:
+{
+    printf("Enter 'HD' for Hot Drinks with snacks!!!\n");
+    scanf("%s",&str);
+    char c[10][20] = { "Coffee\t","Tea\t","Bournvita","Horlicks","Badam Milk","Boost\t","Onion Bajji","Capsicum Bajji","Aloo Bajji","Mixed Bajji"};
+    if(strcmpi(str,"HD")==0)
+    {
+        printf("Welcome to Hot Drinks with snacks\n");
+        printf("Hot Drinks with snacks\t\t\t\tPrice in Rs\n");
+        printf("1.Coffee\t\t\t\t\t30\n");
+        printf("2.Tea\t\t\t\t\t\t30\n");
+        printf("3.Bournvita\t\t\t\t\t60\n");
+        printf("4.Horlicks\t\t\t\t\t60\n");
+        printf("5.Badam Milk\t\t\t\t\t80\n");
+        printf("6.Boost\t\t\t\t\t\t60\n");
+        printf("7.Onion Bajji\t\t\t\t\t70\n");
+        printf("8.Capsicum Bajji\t\t\t\t70\n");
+        printf("9.Aloo Bajji\t\t\t\t\t70\n");
+        printf("10.Mixed Bajji\t\t\t\t\t70\n");
+        choice=1;
+        while(choice)
+        {
+            printf("Choose the order by entering Number:");
+            printf("\tEnter 0 to stop\n");
+            scanf("%d",&vfd);
+        if(vfd>10)
+        {
+            printf("Item number that was selected is not present, please select the correct choice\n");
+            continue;
+        }
+        if(vfd==0)
+        {
+            break;
+        }
+        strcat(itemchosen[incr],c[vfd-1]);
+        printf("Enter the Quantity\n");
+        scanf("%d",&tvfd);
+
+        if(vfd==1||vfd==2)
+        {
+        amt=tvfd*30;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t30\t");
+        strcat(itemchosen[incr++],amount);
+        }
+
+        if(vfd==7||vfd==8||vfd==9||vfd==10)
+        {
+        amt=tvfd*70;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t70\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(vfd==3||vfd==4||vfd==6)
+        {
+        amt=tvfd*60;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t60\t");
+        strcat(itemchosen[incr++],amount);
+        }
+
+        if(vfd==5)
+        {
+        amt=tvfd*80;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t80\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        tamt1=tamt1+amt;
+        printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+        scanf("%d",&choice);
+        }
+    }
+}
+break;
+
+case 3:
+{
+    char c[11][16]={"Masala Dosa","Butter M D","Set M D\t","Butter Plain D","Set Dosa","Plain Dosa","Kali Dosa","Paper M D","Paper Plain D","Rava Onion D","Tomato Dosa"};
+    printf("Special Dosa's\t\t\t\tPrice in Rs.\n");
+    printf("1.Masala Dosa\t\t\t\t70\n");
+    printf("2.Butter Masala Dosa\t\t\t80\n");
+    printf("3.Set Masala Dosa\t\t\t80\n");
+    printf("4.Butter Plain Dosa\t\t\t80\n");
+    printf("5.Set Dosa\t\t\t\t70\n");
+    printf("6.Plain Dosa\t\t\t\t90\n");
+    printf("7.kali Dosa\t\t\t\t90\n");
+    printf("8.Paper Masala Dosa\t\t\t80\n");
+    printf("9.Paper Plain Dosa\t\t\t80\n");
+    printf("10.Rava Onion Dosa\t\t\t90\n");
+    printf("11.Tomato Dosa\t\t\t\t90\n");
+    choice=1;
+while(choice)
+{
+printf("Choose your Dosa by entering your number!!");
+printf("\tEnter 0 to stop\n");
+scanf("%d",&d);
+if(d>11)
+{
+printf("Item number that was selected is not present, please select the correct choice\n");
+continue;
+}
+if(d==0)
+{
+  break;
+}
+    strcat(itemchosen[incr],c[d-1]);
+    printf("Enter the Quantity\n");
+    scanf("%d",&tvfd);
+    if(d==1||d==5)
+        {
+        amt=tvfd*70;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t70\t");
+        strcat(itemchosen[incr++],amount);
+        }
+    if(d==2||d==3||d==4||d==8||d==9)
+        {
+        amt=tvfd*80;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t80\t");
+        strcat(itemchosen[incr++],amount);
+        }
+    if(d==6||d==7||d==10||d==11)
+        {
+        amt=tvfd*90;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t90\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        tamt2=tamt2+amt;
+        printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+        scanf("%d",&choice);
+}
+}
+break;
+
+case 4:
+{
+    char c[2][14]={"SouthIndMeals","NorthIndMeals"};           // Two values in [1st]  of many length[2nd]
+    printf("Meals\t\t\t\t\tPrice in Rs.\n");
+    printf("1.South Indian Meals\t\t\t60\n");
+    printf("2.North Indian Meals\t\t\t100\n");
+    choice=1;
+    while(choice)
+    {
+    printf("Choose your Meals by entering your number!!\n");
+    scanf("%d",&d);
+    if(d>2)
+    {
+    printf("Item number that was selected is not present, please select the correct choice\n");
+    continue;
+    }
+    if(d==0)
+    {
+    break;
+    }
+    strcat(itemchosen[incr],c[d-1]);
+    printf("Enter the Quantity\n");
+    scanf("%d",&tvfd);
+
+    if(d==1)
+        {
+        amt=tvfd*60;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);     // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t60\t");
+        strcat(itemchosen[incr++],amount);
+        }
+    if(d==2)
+        {
+        amt=tvfd*100;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t100\t");
+        strcat(itemchosen[incr++],amount);
+        }
+    tamt3=tamt3+amt;
+    printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+    scanf("%d",&choice);
+    }
+}
+break;
+
+case 5:
+{
+char c[11][20]= {"Veg.Machurian","Gobi Mach","Mushroom Mach","Chilly Gobi","Chilly Panner","C.Crisp Potato","G.F.Babycorn","Paneer65","Veg S Roll","Finger Chips","Chinese Pakoda"};
+printf("Starters Corner\t\t\t\tPrice in Rs.\n");
+printf("1.Veg.Manchurian\t\t\t140\n");
+printf("2.Gobi Manchurian\t\t\t130\n");
+printf("3.Mushroom Manchurian\t\t\t140\n");
+printf("4.Chilly Gobi\t\t\t\t150\n");
+printf("5.Chilly Paneer\t\t\t\t120\n");
+printf("6.Chilly Crispy Potato\t\t\t130\n");
+printf("7.Golden Fry Babycorn\t\t\t140\n");
+printf("8.Paneer65\t\t\t\t140\n");
+printf("9.Veg.Spring Roll\t\t\t140\n");
+printf("10.Finger Chips\t\t\t\t120\n");
+printf("11.Chinese Pakoda\t\t\t130\n");
+choice=1;
+
+while(choice)
+{
+printf("Choose your Starter by entering your number!!");
+printf("\tEnter 0 to stop\n");
+scanf("%d",&d);
+if(d>11)
+{
+printf("Item number that was selected is not present, please select the correct choice\n");
+continue;
+}
+if(d==0)
+    {
+    break;
+    }
+    strcat(itemchosen[incr],c[d-1]);
+    printf("Enter the Quantity\n");
+    scanf("%d",&tvfd);
+    if(d==2||d==6||d==11)
+        {
+        amt=tvfd*130;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t130\t");
+        strcat(itemchosen[incr++],amount);
+        }
+    if(d==1||d==3||d==7||d==8||d==9)
+        {
+        amt=tvfd*140;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t140\t");
+        strcat(itemchosen[incr++],amount);
+        }
+    if(d==4)
+        {
+        amt=tvfd*150;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t150\t");
+        strcat(itemchosen[incr++],amount);        }
+    if(d==5||d==10)
+        {
+        amt=tvfd*120;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t120\t");
+        strcat(itemchosen[incr++],amount);
+        }
+    tamt4=tamt4+amt;
+    printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+    scanf("%d",&choice);
+    }
+}
+break;
+case 6:
+{
+     char c[11][20] = {"Pani puri","Masal puri","Bhel Puri","Sev Puri","Tomata chat","Pav Bhaji","Dahi Allo","Masal Samosa","C.M.Bread","Kadai P.Bhaji","Allo chat"};
+        printf("Chats\t\t\t\t\tPrice in Rs.\n");
+        printf("1.Pani puri\t\t\t\t60\n");
+        printf("2.Masala Puri\t\t\t\t70\n");
+        printf("3.Bhel Puri\t\t\t\t60\n");
+        printf("4.Sev Puri\t\t\t\t80\n");
+        printf("5.Tomato Chat\t\t\t\t50\n");
+        printf("6.Pav Bhaji\t\t\t\t80\n");
+        printf("7.Dahi Allo Puri\t\t\t90\n");
+        printf("8.Masala Samosa\t\t\t\t50\n");
+        printf("9.Cheese Masala Bread\t\t\t60\n");
+        printf("10.Kadai Pav Bhaji\t\t\t90\n");
+        printf("11.Allo Chat\t\t\t\t50\n");
+choice=1;
+while(choice)
+    {
+        printf("Choose your Chats by entering your number!!");
+        printf("\tEnter 0 to stop\n");
+        scanf("%d",&d);
+        if(d>11)
+        {
+        printf("Item number that was selected is not present, please select the correct choice\n");
+        continue;
+        }
+        if(d==0)
+        {
+        break;
+        }
+        strcat(itemchosen[incr],c[d-1]);
+        printf("Enter the Quantity\n");
+        scanf("%d",&tvfd);
+        if(d==1||d==3||d==9)
+        {
+        amt=tvfd*60;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t60\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==4||d==6)
+        {
+        amt=tvfd*80;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t80\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==2)
+        {
+        amt=tvfd*70;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t70\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==5||d==8||d==11)
+        {
+        amt=tvfd*50;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t50\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==7||d==10)
+        {
+        amt=tvfd*90;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t90\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        tamt5=tamt5+amt;
+        printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+        scanf("%d",&choice);
+
+
+
+    }
+
+}
+break;
+case 7:
+{
+    char c[9][16]= {"T.Soup\t","Mushroom Soup","Veg.Soup","S.corn Soup","S.cornMushSoup","Hot'n'Sour soup","V.Manchow Soup","B.corn Soup","V.Mush Soup"};
+    printf("Soups\t\t\t\t\tPrice in Rs.\n");
+    printf("1.Tomato Soup\t\t\t\t60\n");
+    printf("2.Mushroom Soup\t\t\t\t70\n");
+    printf("3.Veg.Soup\t\t\t\t60\n");
+    printf("4.Sweetcorn Soup\t\t\t80\n");
+    printf("5.Sweetcorn Mushroom Soup\t\t50\n");
+    printf("6.Hot'N'Sour Veg.Soup\t\t\t80\n");
+    printf("7.Veg.Manchow Soup\t\t\t90\n");
+    printf("8.Babycorn Soup\t\t\t\t50\n");
+    printf("9.Veg.Mushroom Soup\t\t\t60\n");
+    choice=1;
+
+while(choice)
+    {
+        printf("Choose your Soups by entering your number!!");
+        printf("\tEnter 0 to stop\n");
+        scanf("%d",&d);
+        if(d>9)
+        {
+        printf("Item number that was selected is not present, please select the correct choice\n");
+        continue;
+        }
+        if(d==0)
+        {
+        break;
+        }
+        strcat(itemchosen[incr],c[d-1]);
+        printf("Enter the Quantity\n");
+        scanf("%d",&tvfd);
+
+        if(d==1||d==3||d==9)
+        {
+        amt=tvfd*60;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t60\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==4||d==6)
+        {
+        amt=tvfd*80;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t80\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==2)
+        {
+        amt=tvfd*70;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t70\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==5||d==8)
+        {
+        amt=tvfd*50;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t50\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==7)
+        {
+        amt=tvfd*90;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t90\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        tamt6=tamt6+amt;
+        printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+        scanf("%d",&choice);
+    }
+}
+break;
+
+case 8:
+{
+    char c[7][16]={"Shahi Kabab","Gobi Kabab","Paneer Kabab","H.B.Kabab","V.Sheekh Kabab","V.Shammi Kabab","M.S.Kabab"};
+    printf("Kabab Corner\t\t\t\tPrice in Rs.\n");
+
+    printf("1.Shahi Kabab\t\t\t\t140\n");
+    printf("2.Gobi Kabab\t\t\t\t140\n");
+    printf("3.Paneer Tikka\t\t\t\t160\n");
+    printf("4.Harabara Kabab\t\t\t140\n");
+    printf("5.Veg.Sheekh Kabab\t\t\t140\n");
+    printf("6.Veg.Shammi Kabab\t\t\t140\n");
+    printf("7.Mughalai Sheekh Kabab\t\t\t160\n");
+    choice=1;
+    while(choice)
+    {
+        printf("Choose your Veg Kabab by entering your number!!");
+        printf("\tEnter 0 to stop\n");
+        scanf("%d",&d);
+        if(d>7)
+        {
+        printf("Item number that was selected is not present, please select the correct choice\n");
+        continue;
+        }
+        if(d==0)
+        {
+        break;
+        }
+        strcat(itemchosen[incr],c[d-1]);
+        printf("Enter the Quantity\n");
+        scanf("%d",&tvfd);
+        if(d==7||d==3)
+        {
+        amt=tvfd*160;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t160\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==1||d==2||d==4||d==5||d==6)
+        {
+        amt=tvfd*140;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t140\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        tamt7=tamt7+amt;
+        printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+        scanf("%d",&choice);
+    }
+}
+break;
+
+case 9:
+{
+    char c[7][20]={"Malai Kofta","Palak Kofta","Nargis Kofta","V.Kofta\t","Tomato DB Kofta","DumAllo Kofta","GobiKoftaMasal"};
+    printf("Delicious Kofta's\t\t\tPrice in Rs.\n");
+    printf("1.Malai Kofta\t\t\t\t140\n");
+    printf("2.Palak Kofta\t\t\t\t140\n");
+    printf("3.Nargis Kofta\t\t\t\t140\n");
+    printf("4.Veg.Kofta\t\t\t\t140\n");
+    printf("5.Tomato Dil Bahar Kofta\t\t140\n");
+    printf("6.Dum Allo Kofta\t\t\t140\n");
+    printf("7.Gobi Kofta Masala\t\t\t140\n");
+    choice=1;
+    while(choice)
+    {
+        printf("Choose your Kofta by  entering your number!!");
+        printf("\tEnter 0 to stop\n");
+        scanf("%d",&d);
+        if(d>8)
+        {
+        printf("Item number that was selected is not present, please select the correct choice\n");
+        continue;
+        }
+        if(d==0)
+        {
+        break;
+        }
+        strcat(itemchosen[incr],c[d-1]);
+        printf("Enter the Quantity\n");
+        scanf("%d",&tvfd);
+        if(d==1||d==2||d==3||d==4||d==5||d==6||d==7)
+        {
+        amt=tvfd*140;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t140\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        tamt8=tamt8+amt;
+        printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+        scanf("%d",&choice);
+    }
+}
+break;
+case 10:
+{
+    char c[9][20] = {"Naan\t","Palak Naan","Stuf Kulcha","MethiKulcha","PaneerKulcha","Ruma Roti","Paratha\t","Allo Paratha","P.Kulcha"};
+    printf("Tandoor Khajana\t\t\t\tPrice in Rs.\n");
+    printf("1.Naan\t\t\t\t\t50\n");
+    printf("2.Palak Naan\t\t\t\t60\n");
+    printf("3.Stuffed Kulcha\t\t\t70\n");
+    printf("4.Methi Kulcha\t\t\t\t70\n");
+    printf("5.Paneer Kulcha\t\t\t\t50\n");
+    printf("6.Rumali Roti\t\t\t\t70\n");
+    printf("7.Paratha\t\t\t\t60\n");
+    printf("8.Allo Paratha\t\t\t\t70\n");
+    printf("9.Pudina Kulcha\t\t\t\t70\n");
+    choice=1;
+    while(choice)
+    {
+    printf("Choose your Tandoor by entering your number!!");
+    printf("\tEnter 0 to stop\n");
+        scanf("%d",&d);
+        if(d>9)
+        {
+        printf("Item number that was selected is not present, please select the correct choice\n");
+        continue;
+        }
+        if(d==0)
+        {
+        break;
+        }
+        strcat(itemchosen[incr],c[d-1]);
+        printf("Enter the Quantity\n");
+        scanf("%d",&tvfd);
+        if(d==1||d==5)
+        {
+        amt=tvfd*50;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t50\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==2||d==7)
+        {
+        amt=tvfd*60;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t60\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==3||d==4||d==6||d==8||d==9)
+        {
+        amt=tvfd*70;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t70\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        tamt9=tamt9+amt;
+        printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+        scanf("%d",&choice);
+    }
+}
+break;
+
+case 11:
+{
+    char c[9][20]={"Dhal fry","Channa Masal","Palak Paneer","Mush Chilly","Kaju Paneer","B.C Curry","Capsi Masal","Paneer Khola","P.KaliMirchi"};
+    printf("Subzi Bahar\t\t\tPrice in Rs.\n");
+    printf("1.Dhal Fry\t\t\t120\n");
+    printf("2.Channa Masala\t\t\t160\n");
+    printf("3.Palak Paneer\t\t\t170\n");
+    printf("4.Mushroom Chilly\t\t170\n");
+    printf("5.Kaju Paneer\t\t\t120\n");
+    printf("6.Babycorn Curry\t\t170\n");
+    printf("7.Capsium Masala\t\t160\n");
+    printf("8.Paneer Kholapuri\t\t170\n");
+    printf("9.Paneer Kali Mirchi\t\t170\n");
+    choice=1;
+    while(choice)
+    {
+    printf("Choose your Subzi Bahar by entering your number!!");
+    printf("\tEnter 0 to stop\n");
+    scanf("%d",&d);
+    if(d>9)
+    {
+    printf("Item number that was selected is not present, please select the correct choice\n");
+    continue;
+    }
+    if(d==0)
+    {
+    break;
+    }
+    strcat(itemchosen[incr],c[d-1]);
+    printf("Enter the Quantity\n");
+    scanf("%d",&tvfd);
+    if(d==1||d==5)
+    {
+    amt=tvfd*120;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t120\t");
+        strcat(itemchosen[incr++],amount);
+    }
+    if(d==2||d==7)
+    {
+    amt=tvfd*160;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t160\t");
+        strcat(itemchosen[incr++],amount);
+    }
+    if(d==3||d==4||d==6||d==8||d==9)
+    {
+    amt=tvfd*170;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t170\t");
+        strcat(itemchosen[incr++],amount);
+    }
+    tamt10=tamt10+amt;
+    printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+    scanf("%d",&choice);
+    }
+}
+break;
+
+case 12:
+{
+        char c[10][20]={"V.Pulao\t","Peas Pulao","Kash Pulao","V.Noodles","V.FriedRice","S.Noodles","Mush Fried Rice","P.FriedRice","Rice Rasam","Curd Rice"};
+        printf("Rice and Noodles\t\t\tPrice in Rs.\n");
+        printf("1.Veg.Pulao\t\t\t\t130\n");
+        printf("2.Peas Pulao\t\t\t\t130\n");
+        printf("3.Kashmiri pulao\t\t\t130\n");
+        printf("4.Veg.Noodles\t\t\t\t140\n");
+        printf("5.Veg.Fried Rice\t\t\t150\n");
+        printf("6.Schezwan Noodles\t\t\t170\n");
+        printf("7.Mushroom Fried Rice\t\t\t160\n");
+        printf("8.Paneer Fried Rice\t\t\t160\n");
+        printf("9.Plain Rice with Rasam \t\t170\n");
+        printf("10.Curd Rice\t\t\t\t170\n");
+        choice=1;
+        while(choice)
+        {
+        printf("Choose your Rice and Noodles by entering your number!!");
+        printf("\tEnter 0 to stop\n");
+        scanf("%d",&d);
+        if(d>10)
+        {
+        printf("Item number that was selected is not present, please select the correct choice\n");
+        continue;
+        }
+        if(d==0)
+        {
+        break;
+        }
+        strcat(itemchosen[incr],c[d-1]);
+        printf("Enter the Quantity\n");
+        scanf("%d",&tvfd);
+        if(d==5)
+        {
+        amt=tvfd*150;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t150\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==2||d==1||d==3)
+        {
+        amt=tvfd*130;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t130\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==4)
+        {
+        amt=tvfd*140;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t140\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==6||d==9||d==10)
+        {
+        amt=tvfd*170;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t170\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==7||d==8)
+        {
+        amt=tvfd*160;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t160\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        tamt11=tamt11+amt;
+        printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+        scanf("%d",&choice);
+        }
+}
+break;
+
+case 13:
+{
+    char c[10][16]={"Vanilla M.S","Choco M.S","Butterscotch","Pista M.S","Cold Coffee","Cold Horlicks","Cold Badami","Rose Milk","Banana M.S","Lassi\t"};
+    printf("Milk Shake\t\t\t\tPrice in Rs.\n");
+    printf("1.Vanilla Milk Shake\t\t\t130\n");
+    printf("2.Chocolate Milk Shake\t\t\t130\n");
+    printf("3.Butterscotch Milk Shake \t\t130\n");
+    printf("4.Pista Milk Shake\t\t\t140\n");
+    printf("5.Cold Coffee\t\t\t\t150\n");
+    printf("6.Cold Horlicks\t\t\t\t170\n");
+    printf("7.Cold Badami\t\t\t\t160\n");
+    printf("8.Rose Milk\t\t\t\t160\n");
+    printf("9.Banana Milk Shake\t\t\t170\n");
+    printf("10.Lassi\t\t\t\t170\n");
+    choice=1;
+    while(choice)
+    {
+        printf("Choose your Milk Shake by entering your number!!");
+        printf("\tEnter 0 to stop\n");
+        scanf("%d",&d);
+        if(d>10)
+        {
+        printf("Item number that was selected is not present, please select the correct choice\n");
+        continue;
+        }
+        if(d==0)
+        {
+        break;
+        }
+        strcat(itemchosen[incr],c[d-1]);
+        printf("Enter the Quantity\n");
+        scanf("%d",&tvfd);
+
+        if(d==5)
+        {
+        amt=tvfd*150;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t150\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==1||d==2||d==3)
+        {
+        amt=tvfd*130;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t130\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==6||d==9||d==10)
+        {
+        amt=tvfd*170;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t170\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==4)
+        {
+        amt=tvfd*140;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t140\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==7||d==8)
+        {
+        amt=tvfd*160;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t160\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        tamt12=tamt12+amt;
+        printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+        scanf("%d",&choice);
+        }
+}
+break;
+
+case 14:
+{
+    char c[10][20] = {"Vanilla I.C","Chocolate I.C","ButterscotchI.C","Kesar Pista","Kulfi\t","TuttiFrutti","Choco Chips","B.C Icecream","Gud Bud\t","PistaBadam"};
+    printf("Desserts Scoops\t\t\t\t\tPrice in Rs.\n");
+    printf("1.Vanilla Icecream\t\t\t\t130\n");
+    printf("2.Chocolate Icecream\t\t\t\t130\n");
+    printf("3.Butterscotch Icecream \t\t\t130\n");
+    printf("4.Kesar Pista \t\t\t\t\t140\n");
+    printf("5.Kulfi\t\t\t\t\t\t150\n");
+    printf("6.Tutti Frutti\t\t\t\t\t170\n");
+    printf("7.Choco Choco Chips\t\t\t\t160\n");
+    printf("8.Black Current Icecream\t\t\t160\n");
+    printf("9.GudBud Icecream\t\t\t\t170\n");
+    printf("10.PistaBadam Icecream\t\t\t\t170\n");
+    choice=1;
+    while(choice)
+    {
+        printf("Choose your Desserts Scoops by entering your number!!");
+        printf("\tEnter 0 to stop\n");
+        scanf("%d",&d);
+        if(d>10)
+        {
+        printf("Item number that was selected is not present, please select the correct choice\n");
+        continue;
+        }
+        if(d==0)
+        {
+        break;
+        }
+        strcat(itemchosen[incr],c[d-1]);
+        printf("Enter the Quantity\n");
+        scanf("%d",&tvfd);
+        if(d==5)
+        {
+        amt=tvfd*150;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t150\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==1||d==2||d==3)
+        {
+        amt=tvfd*130;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t130\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==6||d==9||d==10)
+        {
+        amt=tvfd*170;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t170\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==4)
+        {
+        amt=tvfd*140;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t140\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        if(d==7||d==8)
+        {
+        amt=tvfd*160;
+        sprintf(amount, "%d", amt);
+        sprintf(Q, "%d", tvfd);    // int to string
+        strcat(itemchosen[incr],"\t");
+        strcat(itemchosen[incr],Q);
+        strcat(itemchosen[incr],"\t160\t");
+        strcat(itemchosen[incr++],amount);
+        }
+        tamt13=tamt13+amt;
+        printf("Do you want to place more order?\tEnter 1 to order/Enter 0 to stop\n");
+        scanf("%d",&choice);
+        }
+}
+break;
+default:
+printf("Please select correct choice!!.\n");
+}
+printf("Enter 1 to go Main Menu or Enter 0 to get the bill\n");
+scanf("%d",&choice1);
+}
+printf("\n\n\n********GURU SAGAR HOTEL********\n");
+printf("**********ITEM SELECTED*********\n");
+printf("Item \t\tQuan    Price\tTotal\n");
+
+while (i < incr)
+        {
+            printf("%s\n",itemchosen[i]);                   //to print selected items in the bill.
+            i++;
+        }
+
+tot=tamt+tamt1+tamt2+tamt3+tamt4+tamt5+tamt6+tamt7+tamt8+tamt9+tamt10+tamt11+tamt12+tamt13;
+float gst=tot+(tot*18/100);
+total_amount=roundf(gst);
+printf("Total Amount=%f\n",tot);
+printf("The total amount with GST is %f",gst);
+printf("\nTotal Amount to be paid=%f",total_amount);
+printf("\nThanks for visiting GURU SAGAR HOTEL");
+printf("\nYour Pleasure Our Comfort!!!!");
+printf("\nVisit Again!!!!!");
+printf("\n******Program Ends******");
+}
+
